@@ -59,7 +59,7 @@ class TextStatistics:
 
         # calculate distribution in log domain
         for e in counter:
-            dist[e] = math.log10(counter[e] / s)
+            dist[e] = math.log10(counter[e]) - math.log10(s)
 
         return dist
 
