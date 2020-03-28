@@ -43,8 +43,8 @@ occur in the cipher would be the same as in the reference text. This is done in 
 
 ##### Phase 2
 In this phase the key given from the previous phase is optimized by using a Maximum-Likelihood approach.
-The key is optimized by randomly swapping two characters from the initial  
-key alphabet. Next the cipher is decrypted using the new key and a fitness score is calculated. If the fitness score is
+The key is optimized by randomly swapping two characters from the initial key alphabet. 
+Next the cipher is decrypted using the new key and a fitness score is calculated. If the fitness score is
 better for the key than the previous one. The newly obtained key is assumed to be the correct one.
 This is done until a certain convergence criteria is met. This is given by "no better key in the last 2000 iterations".
 
