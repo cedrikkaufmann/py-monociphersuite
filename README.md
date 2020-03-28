@@ -20,7 +20,7 @@ python mono.py --encrypt rehmtfzgoxsqwpclbanjdykuiv plaintext.txt --out cipher.t
 ### Decryption
 Example: Decrypt content of *cipher.txt* with *rehmtfzgoxsqwpclbanjdykuiv* and save in file *plaintext.txt*
 ```
-python mono.py --decrypt rehmtfzgoxsqwpclbanjdykuiv plaintext.txt --out cipher.txt
+python mono.py --decrypt rehmtfzgoxsqwpclbanjdykuiv plaintext.txt --out plaintext.txt
 ```
 
 ### Key Derivation
