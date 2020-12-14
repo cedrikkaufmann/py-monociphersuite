@@ -162,15 +162,15 @@ class Cipher:
         analyzer = NGramAnalyzer(refStats)
         counter = 0  # convergence counter
 
+        # decrypt with current best-key
+        c = Cipher(key)
+        plain = c.decrypt(payload)
+
+        # calculate fitness score by weighted likelihoods
+        fitness = 10 * analyzer.logLikelihood(plain, 'unigrams') + analyzer.logLikelihood(plain, 'bigrams') + \
+                  300 * analyzer.logLikelihood(plain, 'quadgrams')
+        
         while counter < 2000:
-            # decrypt with current best-key
-            c = Cipher(key)
-            plain = c.decrypt(payload)
-
-            # calculate fitness score by weighted likelihoods
-            fitness = 10 * analyzer.logLikelihood(plain, 'unigrams') + analyzer.logLikelihood(plain, 'bigrams') + \
-                      300 * analyzer.logLikelihood(plain, 'quadgrams')
-
             # generate random indices
             randomIndices = randomExclusiveSet(26)
 
@@ -186,6 +186,7 @@ class Cipher:
             # if key produces better fitness, save new key as best-key
             if fitnessNew > fitness:
                 key = newKey
+                fitness = fitnessNew
                 counter = 0
             else:
                 # no improvement, count up convergence counter
