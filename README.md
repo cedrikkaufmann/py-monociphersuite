@@ -1,6 +1,6 @@
 # Mono Cipher Suite
 This cipher suite is a simple implementation of the mono-alphabetic substitution. The main purpose of this tool is to 
-show you how to crack/derive the used substitution alphabet by using statistic analysis. 
+demonstrate how to crack/derive the used substitution alphabet by using statistic analysis. 
 
 ## Features
 - Encryption
